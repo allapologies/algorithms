@@ -12,6 +12,29 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+const multipleByThree = (int) => int % 3 === 0;
+const multipleByFive = (int) => int % 5 === 0;
+
+const fizz = 'fizz';
+const buzz = 'buzz';
+const fB = fizz + buzz;
+
+const condition = (n) => {
+    if (multipleByThree(n) && multipleByFive(n)) {
+        return fB
+    } else if (multipleByThree(n)) {
+        return fizz
+    } else if (multipleByFive(n)){
+        return buzz
+    } else {
+        return n
+    }
+};
+
+const fizzBuzz = (n) => {
+    for (let i = 1; i <= n; i++) {
+        console.log(condition(i))
+    }
+};
 
 module.exports = fizzBuzz;
