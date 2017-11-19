@@ -17,6 +17,23 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+const steps = (n) => {
+
+    for (let row = 0; row < n; row++) {
+        let string = "";
+
+        for (let column = 0; column < n; column ++) {
+            if (column <= row) {
+                string += "#";
+            } else {
+                string += " ";
+            }
+        }
+
+        console.log(string)
+    }
+
+};
+
 
 module.exports = steps;
