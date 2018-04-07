@@ -6,15 +6,10 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-// 2
-const reverse = (str) => {
-  let reversed = '';
-  for (const character of str) { // eslint-disable-line
-    reversed = character + reversed;
-  }
-
-  return reversed;
-};
+// 3
+const reverse = str => str
+  .split('')
+  .reduce((reversed, char) => char + reversed, '');
 
 module.exports = reverse;
 
@@ -23,3 +18,14 @@ module.exports = reverse;
 //   .split('')
 //   .reverse()
 //   .join('');
+
+// 2
+// const reverse = (str) => {
+//   let reversed = '';
+//   for (const character of str) { // eslint-disable-line
+//     reversed = character + reversed;
+//   }
+//
+//   return reversed;
+// };
+//
