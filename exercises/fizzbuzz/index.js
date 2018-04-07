@@ -12,6 +12,27 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+const getItem = (int) => {
+  if (int % 15 === 0) {
+    return 'fizzbuzz';
+  }
+  if (int % 3 === 0) {
+    return 'fizz';
+  }
+  if (int % 5 === 0) {
+    return 'buzz';
+  }
+
+  return int;
+};
+
+const fizzBuzz = (n) => {
+  const result = [];
+  for (let i = 1; i <= n; i++) {
+    result.push(getItem(i));
+  }
+
+  return result.forEach(console.log);
+};
 
 module.exports = fizzBuzz;
