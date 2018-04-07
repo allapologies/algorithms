@@ -7,7 +7,9 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 
-// 3
-const reverse = () => ({})
+const reverse = str => str
+  .split('')
+  .reverse()
+  .join('');
 
 module.exports = reverse;
