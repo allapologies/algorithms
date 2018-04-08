@@ -8,17 +8,32 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
+// 2
 const chunk = (array, size) => {
   const chunked = [];
-  array.forEach((item) => {
-    const lastElement = chunked[chunked.length - 1];
-    if (!lastElement || lastElement.length === size) {
-      chunked.push([item]);
+  for (const element of array) { // eslint-disable-line
+    const last = chunked[chunked.length - 1];
+    if (!last || last.length === size) {
+      chunked.push([element]);
     } else {
-      lastElement.push(item);
+      last.push(element);
     }
-  });
+  }
   return chunked;
 };
 
 module.exports = chunk;
+
+// 1
+// const chunk = (array, size) => {
+//   const chunked = [];
+//   array.forEach((item) => {
+//     const lastElement = chunked[chunked.length - 1];
+//     if (!lastElement || lastElement.length === size) {
+//       chunked.push([item]);
+//     } else {
+//       lastElement.push(item);
+//     }
+//   });
+//   return chunked;
+// };
